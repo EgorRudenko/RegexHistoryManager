@@ -1,4 +1,9 @@
-let re; 
+let re;
+
+browser.storage.sync.get("realtimeHistoryPurgeRegexp").then((item) =>
+{
+    re = new RegExp(item.realtimeHistoryPurgeRegexp); 
+});
 
 function processNewHistoryEntry(HI) {
     if (re && re.test(HI.url)) {
@@ -25,11 +30,16 @@ function purge(re) {
 
 function procMes(message) {
     if (message.txt == "setRe") {
-	re = new RegExp(message.re);
+	if (message.re != "") {
+	    browser.storage.sync.set({realtimeHistoryPurgeRegexp: message.re});
+	    re = new RegExp(message.re);
+	}
     } else if (message.txt == "purge") {
-	const p = new RegExp(message.re);
-	console.log(p);
-	purge(p);
+	if (message.re != "") {
+	    browser.storage.sync.set({singularHistoryPurgeRegexp: message.re});
+	    const p = new RegExp(message.re);
+	    purge(p);
+	}
     }
 }
 
@@ -41,3 +51,4 @@ browser.runtime.onMessage.addListener(
 browser.history.onVisited.addListener(
     processNewHistoryEntry
 )
+

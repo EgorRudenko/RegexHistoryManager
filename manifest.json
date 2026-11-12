@@ -6,9 +6,9 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["history"],
-     "background": {
-      "service_worker": "script.js",
-      "type": "module"
-    }
+  "permissions": ["history", "storage"],
+  "background": {
+    "service_worker": "script.js",
+    "type": "module"
+  }
 }
