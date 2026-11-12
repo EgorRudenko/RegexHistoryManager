@@ -51,4 +51,3 @@ browser.runtime.onMessage.addListener(
 browser.history.onVisited.addListener(
     processNewHistoryEntry
 )
-
