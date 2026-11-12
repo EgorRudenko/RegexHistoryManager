@@ -1,0 +1,14 @@
+{
+  "name": "Regex History Manager",
+  "description": "Purge history with Regex and Prevent entries from being added",
+  "version": "0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["history"],
+     "background": {
+      "service_worker": "script.js",
+      "type": "module"
+    }
+}
