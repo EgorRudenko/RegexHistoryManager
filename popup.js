@@ -8,14 +8,17 @@ document.getElementById("submitUpdate").addEventListener("click", () => {update(
 
 
 
-browser.storage.sync.get("singularHistoryPurgeRegexp").then((item)=>{
-    document.getElementById("regexp").value = item.singularHistoryPurgeRegexp;
+browser.storage.local.get("singularHistoryPurgeRegexp").then((item)=>{
+    document.getElementById("regexp").value = item.singularHistoryPurgeRegexp!=undefined ?
+	item.singularHistoryPurgeRegexp : "";
 })
 
 
 
-browser.storage.sync.get("realtimeHistoryPurgeRegexp").then((item)=>{
-    document.getElementById("regexpRegular").value = item.realtimeHistoryPurgeRegexp;
+browser.storage.local.get("realtimeHistoryPurgeRegexp").then((item)=>{
+    console.log(item.realtimeHistoryPurgeRegexp);
+    document.getElementById("regexpRegular").value = item.realtimeHistoryPurgeRegexp!=undefined ?
+	item.realtimeHistoryPurgeRegexp : "";
 })
 
 

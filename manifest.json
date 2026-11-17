@@ -4,9 +4,14 @@
   "version": "0.0",
   "manifest_version": 3,
   "action": {
+    "default_icon": "clk.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["history", "storage"],
+  "permissions": ["history", "storage", "tabs", "scripting"],
+  "host_permissions":[
+    "https://*/*",
+    "http://*/*"
+  ],
   "background": {
     "service_worker": "script.js",
     "type": "module"
