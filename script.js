@@ -63,9 +63,6 @@ async function iconSwapAct(activeInfo) {
 	});
     }
 }
-browser.tabs.onUpdated.addListener(
-    iconSwap
-)
 
 function processNewHistoryEntry(HI) {
     if (re && re.test(HI.url)) {
@@ -123,4 +120,7 @@ browser.history.onVisited.addListener(
 
 browser.tabs.onActivated.addListener(
     iconSwapAct
+)
+browser.tabs.onUpdated.addListener(
+    iconSwap
 )
