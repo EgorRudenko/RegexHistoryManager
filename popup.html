@@ -2,14 +2,17 @@
   <head>
   </head>
   <body>
-    <h3 id="header">Regex History Manager</h3>
-    One time purge regexp: <input type="text" id="regexp"> 
-    <button
-      id="submitPurge">Purge</button>
-    <hr/>
-    Runtime purge Regexp: <input type="text" id="regexpRegular"> 
-    <button
-      id="submitUpdate">Set</button>
+    <button style="visibility:visible; position: absolute;" id="showBtn">Show</button>
+    <div style="visibility:hidden;" id="cont">
+      <h3 id="header">Regex History Manager</h3>
+      One time purge regexp: <input type="text" id="regexp"> 
+      <button
+	id="submitPurge">Purge</button>
+      <hr/>
+      Runtime purge Regexp: <input type="text" id="regexpRegular"> 
+      <button
+	id="submitUpdate">Set</button>
+      </div>
   </body>
   <script src="popup.js"></script>
 </html>

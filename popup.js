@@ -1,3 +1,8 @@
+document.getElementById("showBtn").addEventListener("click", () => {
+    document.getElementById("showBtn").style.visibility = "hidden";
+    document.getElementById("cont").style.visibility = "visible";
+});
+
 document.getElementById("submitPurge").addEventListener("click", () => {purge(
     document.getElementById('regexp').value
 )});
